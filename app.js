@@ -1,10 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const app = express;
+const app = express();
 
 app.get("/", function(req, res) {
-    res.send("Hello");
+    var today = new Date();
+    if (today.getDay() === 3) {
+        res.write("<h1>It's Monday!</h1>");
+        res.write("<p>Hello World</p>");
+    }
+    else {
+        res.sendFile(__dirname + "/index.html");
+    }
 });
 
 app.listen(3000, function() {
