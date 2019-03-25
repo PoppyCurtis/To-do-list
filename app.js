@@ -7,10 +7,15 @@ app.set('view engine', 'ejs')
 
 app.get("/", function(req, res) {
     var today = new Date();
-    var day = "";
-    var weekdays= ["Sunday", "Monday", "Tuesday", "Wednesday",
-    "Thursday", "Friday", "Saturday"];
-    day = weekdays[today.getDay()];
+    
+    
+    var options = {
+        weekday: "long",
+        day: "numeric",
+        month: "long"
+    };
+   var day = today.toLocaleDateString("en-US", options);
+
     res.render("list", {dayOfTheWeek: day});
 });
 
