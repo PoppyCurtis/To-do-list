@@ -18,18 +18,27 @@ app.get("/", function (req, res) {
     const day = today.toLocaleDateString("en-US", options);
     res.render("list", { listTitle: day, newListItems: items });
 });
-app.post("/", function (req, res) {
-    const item = req.body.newItem;
-    items.push(item);
-    res.redirect("/");
-});
-app.get("/work", function(req, res) {
-    res.render("list", {listTitle: "Work List", newListItems: workItems});
-});
-app.post("/work", function(req, res) {
+//app.post("/", function (req, res) {
+    //const item = req.body.newItem;
+   // items.push(item);
+  //  res.redirect("/");
+//});
+
+app.post("", function (req, res) {
+    console.log(req.body);
     let item = req.body.newItem;
-    workItems.push(item);
-    res.redirect("/work");
+    if (req.body.list === "Work") {
+        workItems.push(item);
+        res.redirect("/work");
+    }
+    else {
+        items.push(item);
+        res.redirect("/")   
+    }
+  
+});
+app.get("/work", function (req, res) {
+    res.render("list", { listTitle: "Work List", newListItems: workItems });
 });
 app.listen(3000, function () {
     console.log("Server started on port 3000");
