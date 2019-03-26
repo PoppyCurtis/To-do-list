@@ -4,13 +4,11 @@
     <head>
         <meta charset="utf-8">
         <title>To Do List</title>
+        <link rel="stylesheet" href="../design/styles.css">
     </head>
     <body>
         <h1 ><%= dayOfTheWeek%></h1> 
         <ul>
-            <li>Buy Food </li>
-            <li>Do dishes </li>
-            <li>Laundry </li>
          <% for (var i = 0; i < newListItems.length; i++) { %>
             <li><%=newListItems[i]%></li>
             <%}%>
