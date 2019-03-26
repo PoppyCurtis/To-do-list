@@ -18,11 +18,6 @@ app.get("/", function (req, res) {
     const day = today.toLocaleDateString("en-US", options);
     res.render("list", { listTitle: day, newListItems: items });
 });
-//app.post("/", function (req, res) {
-    //const item = req.body.newItem;
-   // items.push(item);
-  //  res.redirect("/");
-//});
 
 app.post("", function (req, res) {
     console.log(req.body);
