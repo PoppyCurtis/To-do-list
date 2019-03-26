@@ -7,6 +7,17 @@
     </head>
     <body>
         <h1 ><%= dayOfTheWeek%></h1> 
-        
+        <ul>
+            <li>Buy Food </li>
+            <li>Do dishes </li>
+            <li>Laundry </li>
+         <% for (var i = 0; i < newListItems.length; i++) { %>
+            <li><%=newListItems[i]%></li>
+            <%}%>
+        </ul> 
+        <form action="/" method="post">
+            <input type="text" name="newItem">
+            <button type="submit" name="button">Add</button>
+        </form>
     </body>
 </html>
