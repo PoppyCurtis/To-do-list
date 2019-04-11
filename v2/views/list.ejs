@@ -5,7 +5,7 @@
   </div>
 
   <div class="box">
-    <% newListItems.forEach(item => { %>
+    <% newListItems.map(item => { %>
       <div class="item">
         <input type="checkbox">
         <p> <%= item.name  %></p>

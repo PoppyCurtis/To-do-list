@@ -30,6 +30,17 @@ const defaultItems = [item1, item2, item3];
 
 app.get("/", function(req, res) {
   Item.find({}, function (err, results) {
+    if (results.length === 0) {
+      Item.insertMany(defaultItems, function(err) {
+        if (err) {
+          console.log(err);
+        }
+        else {
+          console.log("Entries added");
+          res.redirect("/");
+        }
+      });
+    }
     res.render("list", {listTitle: "Today", newListItems: results}
     );
   });
