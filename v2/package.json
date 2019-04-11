@@ -1,0 +1,30 @@
+{
+  "name": "todolist-v1",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Poppy Curtis",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.0",
+    "nodemon": "^1.18.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PoppyCurtis/To-do-list.git"
+  },
+  "keywords": [
+    "mongo",
+    "mongoose"
+  ],
+  "bugs": {
+    "url": "https://github.com/PoppyCurtis/To-do-list/issues"
+  },
+  "homepage": "https://github.com/PoppyCurtis/To-do-list#readme",
+  "description": ""
+}
