@@ -26,20 +26,16 @@ const item3 = new Item ({
  name: "<-- Hit this to delete an item."
 });
 const defaultItems = [item1, item2, item3];
-Item.insertMany(defaultItems, function(err) {
-  if (err) {
-    console.log("error time");
-  }
-  else {
-    console.log("operation successfully completed");
-  }
-});
+
+
 app.get("/", function(req, res) {
-
-const day = date.getDate();
-
-  res.render("list", {listTitle: "Today", //newListItems: items
+  Item.find({}, function (err, results) {
+    res.render("list", {listTitle: "Today", newListItems: results}
+    );
   });
+
+
+  
 
 });
 
