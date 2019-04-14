@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
+const _ = require("lodash");
 
 app.set('view engine', 'ejs');
 
@@ -100,7 +101,7 @@ app.post("/delete", function (req, res) {
 
 
 app.get("/:customlist", function (req, res) {
-  const customlistname = req.params.customlist;
+  const customlistname = _.capitalize(req.params.customlist);
   List.findOne({ name: customlistname }, function (err, foundone) {
     if (!err) {
       if (!foundone) {
